@@ -1,0 +1,18 @@
+<div class="content">
+<div class="container">
+<div class="row d-flex  justify-content-center">
+      
+      <h1>Recipes</h1>
+</div>
+</div>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12">
+      {{!-- ordered but not eaten --}}
+        <ul>
+          {{#each recipes}}
+                  <li {{id}} - {{recipe}}  -  {{createdAt}}></li>
+          {{/each}}
+    </div>
+</div>
+</div>

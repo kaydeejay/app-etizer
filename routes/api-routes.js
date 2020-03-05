@@ -50,4 +50,25 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/recipes", function(req, res) {
+    // 1. Add a join to include all of each Author's Posts
+    db.Recipe.findAll({}).then(function(dbUser) {
+      res.json(dbUser);
+    });
+    app.get("/api/recipes/:id", function(req, res) {
+      // 2; Add a join to include all of the Author's Posts here
+      db.User.findOne({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbUser) {
+        res.json(dbUser);
+        var hbsObject = {
+          User: dbUser
+        };
+        console.log(hbsObject);
+      });
+    });
+  });
 };
