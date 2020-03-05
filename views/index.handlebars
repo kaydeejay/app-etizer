@@ -11,7 +11,8 @@
       {{!-- ordered but not eaten --}}
         <ul>
           {{#each recipes}}
-                  <li {{id}} - {{recipe}}  -  {{createdAt}}></li>
+                  <li> {{this.id}} - {{this.recipe}}  -  {{this.createdAt}}</li>
+
           {{/each}}
     </div>
 </div>
