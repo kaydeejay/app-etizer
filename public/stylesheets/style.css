@@ -11,8 +11,6 @@ form.login {
 .mybox {
   width: 100%;
   height: 300px;
-  background-color: lime!important;
-  color: red;
   text-align: center;
 }
 .fas {
@@ -21,7 +19,6 @@ form.login {
 }
 .title {
   font-size: 2em;
-  margin-left: 50%;
   font-weight: 600;
   text-align: center;
   color: blue;

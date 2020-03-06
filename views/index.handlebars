@@ -15,8 +15,9 @@
      </div>
      <div class="col-md-4">
           {{#each recipes}}
-              <a href={{this.recipeLink}} target="_blank" rel="noopener noreferrer"><h3>{{this.title}}</h3> 
-              <img class="img-fluid" src={{this.imageLink}} height="300px"></a><br /><button type="btn" class="clean-up-btn" id={{this.id}} data-id={{this.id}}><i class="fas fa-trash-alt"></i></button>
+              <a href={{this.recipeLink}} target="_blank" rel="noopener noreferrer"><h3>{{this.id}} {{this.title}}</h3> 
+              <img class="img-fluid" src={{this.imageLink}} height="300px"></a><br>
+              <button type="btn" class="del" id="{{this.id}}" data-id="{{this.id}}"><i class="fas fa-trash-alt"></i></button>
 
           {{/each}}
       </div>
@@ -29,8 +30,8 @@
   </div>
   <div class="row d-flex  justify-content-center">
     <div class="col-lg-12 title">
-      <button type="btn" id="post">Post Route Test Button</button>
-      <div>Enjoy!</div>
+      <button type="btn" id="post">Add Favorite Test Route Button</button>
+      <div>&nbsp;</div>
     </div>
 </div>
 </div>

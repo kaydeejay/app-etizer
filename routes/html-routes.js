@@ -15,7 +15,16 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
   app.get("/recipes", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("index", {});
+  });
+  app.post("/recipes", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("index", {});
+  });
+  app.delete("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
     res.render("index", {});
   });
