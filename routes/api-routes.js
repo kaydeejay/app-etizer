@@ -52,7 +52,6 @@ module.exports = function(app) {
   });
 
   app.get("/api/users/:UserId/recipes", function(req, res) {
-    // 1. Add a join to include all of each Author's Posts
     db.Recipe.findAll({
       raw: true,
       where: {
@@ -60,6 +59,30 @@ module.exports = function(app) {
       }
     }).then(function(dbRecipes) {
       console.log(dbRecipes);
+      res.render("index", { recipes: dbRecipes });
+    });
+  });
+
+  app.delete("/api/recipes/:id", function(req, res) {
+    db.Recipe.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbRecipes) {
+      console.log(dbRecipes);
+      res.render("index", { recipes: dbRecipes });
+    });
+  });
+
+  app.post("/api/recipes", function(req, res) {
+    db.Recipe.create({
+      recipeLink: "https://www.yelp.com/",
+      spoonId: 123456,
+      title: "Great Food",
+      imageLink:
+        "https://cakescottage.com/wp-content/uploads/2019/08/melt-chicken-baa.jpg",
+      UserId: 1
+    }).then(function(dbRecipes) {
       res.render("index", { recipes: dbRecipes });
     });
   });
