@@ -4,7 +4,7 @@ module.exports = {
   development: {
     username: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_PASSWORD,
-    database: "recipes",
+    database: process.env.MYSQL_DATABASE,
     host: "127.0.0.1",
     port: 3306,
     dialect: "mysql"
