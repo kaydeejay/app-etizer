@@ -1,8 +1,8 @@
-$(`"#${this.id}"`).on("click", function(event) {
+$("#'" + this.id + "'").on("click", function(event) {
   event.preventDefault();
   alert("clicked");
-  var id = `${this.id}`;
-  $.ajax("/api/recipes/:" + id , {
+  var id = this.id;
+  $.ajax("/api/recipes/:" + id, {
     type: "DELETE"
   }).then(location.reload());
 });
