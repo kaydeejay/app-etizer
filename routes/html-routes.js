@@ -26,4 +26,12 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("index", {});
   });
+
+  app.get("/search", isAuthenticated, function(req, res) {
+    res.render("search", {});
+  });
+
+  app.get("/favorites", isAuthenticated, function(req, res) {
+    res.render("favorites", {});
+  });
 };
