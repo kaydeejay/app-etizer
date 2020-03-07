@@ -1,4 +1,4 @@
-// Requiring our models and passport as we've configured it
+/* eslint-disable */
 var db = require("../models");
 var passport = require("../config/passport");
 
@@ -31,9 +31,14 @@ module.exports = function(app) {
   });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
+  app.get("/logout", function (req, res) {
+    // eslint-disable-next-line no-use-before-define
+    req.session.destroy((err) => {
+      if(err) return next(err)
+      req.logout()
+      res.sendStatus(200)
+    })
+    res.redirect("/api/login");
   });
 
   // Route for getting some data about our user to be used client side
@@ -51,24 +56,50 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/recipes", function(req, res) {
-    // 1. Add a join to include all of each Author's Posts
-    db.Recipe.findAll({}).then(function(dbUser) {
-      res.json(dbUser);
+  app.get("/api/users/:UserId/recipes", function(req, res) {
+    db.Recipe.findAll({
+      raw: true,
+      where: {
+        UserId: req.params.UserId
+      }
+    }).then(function(dbRecipes) {
+      console.log(dbRecipes);
+      res.render("index", { recipes: dbRecipes });
     });
-    app.get("/api/recipes/:id", function(req, res) {
-      // 2; Add a join to include all of the Author's Posts here
-      db.User.findOne({
-        where: {
-          id: req.params.id
-        }
-      }).then(function(dbUser) {
-        res.json(dbUser);
-        var hbsObject = {
-          User: dbUser
-        };
-        console.log(hbsObject);
-      });
+  });
+
+  app.delete("/api/recipes/:id", function(req, res) {
+    db.Recipe.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbRecipes) {
+      console.log(dbRecipes);
+      res.render("index", { recipes: dbRecipes });
     });
+  });
+
+  app.post("/api/recipes", function(req, res) {
+    console.log(req);
+    db.Recipe.create({
+      recipeLink: req.body.recipeLink,
+      spoonId: req.body.spoonId,
+      title: req.body.title,
+      imageLink: req.body.imageLink,
+      UserId: req.body.UserId
+    }).then(function(dbRecipes) {
+      console.log(dbRecipes);
+      res.render("index", { recipes: dbRecipes });
+    });
+  });
+
+app.get("/api/favorites", function(req, res) {
+  console.log(req);
+  res.render("favorites", { recipes: dbRecipes });
+});
+
+app.get("/api/search", function(req, res) {
+  console.log(req);
+  res.render("search", { recipes: dbRecipes });
   });
 };

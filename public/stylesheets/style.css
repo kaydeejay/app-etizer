@@ -1,4 +1,68 @@
+.img {
+  display: block;
+  max-width:350px;
+  max-height:525px;
+  width: auto;
+  height: auto;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+.mytitle {
+  font-size: 1.2em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  text-decoration: none;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  text-align: center;
+  background-color: gray;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.mytitle a:link {
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: gray;
+  color: white;
+}
+.mybox {
+  background-color: red;
+  /* position: relative; */
+  width: 100%;
+  /* padding-top: 56.25%; */
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 1px 1px 1px #999999;
+}
+.del {
+  float: right;
+  color: red;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #333333;
+}
+.logout {
+  float: right;
+  color: red;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #333333;
+}
+.title {
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  color: blue;
+}
+.testBtn {
+  font-size: .9em;
+  font-weight: 400;
+  text-align: center;
+  color: green;
 }
