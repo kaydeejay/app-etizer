@@ -1,11 +1,11 @@
-$(document).ready(function(){
-  $("#searchButton").on("click", function(){
+$(document).ready(function() {
+  $("#searchButton").on("click", function() {
     $.ajax({
       // call the backend 'search' route, which will query spoonacular api
-      url: '/api/search',
+      url: "/api/search",
       method: "GET"
     }).then(result => {
-      // other stuff
+      console.log(result);
     });
   });
 });
