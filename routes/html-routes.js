@@ -15,6 +15,7 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+<<<<<<< HEAD
   app.get("/logout", function(req, res) {
     console.log(req);
     res.sendFile(path.join(__dirname, "../public/login.html"));
@@ -29,6 +30,13 @@ module.exports = function(app) {
   });
   app.delete("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
+=======
+
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/members", isAuthenticated, function(req, res) {
+    // $;
+>>>>>>> 49d01db41b8c73b75967a7098f2e84461149cb04
     res.render("index", {});
   });
 };
