@@ -15,6 +15,7 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
   app.get("/logout", function(req, res) {
     console.log(req);
     res.sendFile(path.join(__dirname, "../public/login.html"));
@@ -28,6 +29,17 @@ module.exports = function(app) {
     res.render("index", {});
   });
   app.delete("/recipes", isAuthenticated, function(req, res) {
+    console.log(req, res);
+  });
+  app.get("/search", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("search", {});
+  });
+  app.get("/favorites", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("favorites", {});
+  });
+  app.get("/index", isAuthenticated, function(req, res) {
     console.log(req);
     res.render("index", {});
   });
