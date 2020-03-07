@@ -39,8 +39,4 @@ module.exports = function(app) {
     console.log(req);
     res.render("favorites", {});
   });
-  app.get("/index", isAuthenticated, function(req, res) {
-    console.log(req);
-    res.render("index", {});
-  });
 };
