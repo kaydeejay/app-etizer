@@ -92,4 +92,14 @@ module.exports = function(app) {
       res.render("index", { recipes: dbRecipes });
     });
   });
+
+app.get("/api/favorites", function(req, res) {
+  console.log(req);
+  res.render("favorites", { recipes: dbRecipes });
+});
+
+app.get("/api/search", function(req, res) {
+  console.log(req);
+  res.render("search", { recipes: dbRecipes });
+  });
 };
