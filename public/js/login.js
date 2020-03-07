@@ -30,6 +30,7 @@ $(document).ready(function() {
     })
       .then(function(user) {
         window.location.replace("/api/users/" + user.id + "/recipes");
+
         // If there's an error, log the error
       })
       .catch(function(err) {

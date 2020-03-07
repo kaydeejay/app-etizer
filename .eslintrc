@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": "prettier",
+  "parser": "babel-eslint",
   "plugins": ["prettier"],
   "rules": {
     "no-duplicate-case": "error",
