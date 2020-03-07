@@ -48,6 +48,12 @@ form.login {
   border-radius: 5px;
   box-shadow: 2px 2px 4px #333333;
 }
+.logout {
+  float: right;
+  color: red;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #333333;
+}
 .title {
   font-size: 2em;
   font-weight: 600;

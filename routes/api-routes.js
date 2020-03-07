@@ -31,9 +31,14 @@ module.exports = function(app) {
   });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
+  app.get("/logout", function (req, res) {
+    // eslint-disable-next-line no-use-before-define
+    req.session.destroy((err) => {
+      if(err) return next(err)
+      req.logout()
+      res.sendStatus(200)
+    })
+    res.redirect("/api/login");
   });
 
   // Route for getting some data about our user to be used client side
