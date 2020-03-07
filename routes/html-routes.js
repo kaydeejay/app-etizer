@@ -29,7 +29,7 @@ module.exports = function(app) {
     res.render("index", {});
   });
   app.delete("/recipes", isAuthenticated, function(req, res) {
-    console.log(req);
+    console.log(req, res);
   });
   app.get("/search", isAuthenticated, function(req, res) {
     console.log(req);
@@ -38,5 +38,9 @@ module.exports = function(app) {
   app.get("/favorites", isAuthenticated, function(req, res) {
     console.log(req);
     res.render("favorites", {});
+  });
+  app.get("/index", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("index", {});
   });
 };
