@@ -1,12 +1,11 @@
 $(document).ready(function(){
   $("#searchButton").on("click", function(){
-    let queryURL = "https://spoonacular.com/food-api/docs&apikey="
-    let apiKey = process.env.SPOON_APIKEY;
     $.ajax({
-      url: queryURL + apiKey,
+      // call the backend 'search' route, which will query spoonacular api
+      url: '/api/search',
       method: "GET"
-    }).then(function(data){
-      console.log(data);
+    }).then(result => {
+      // other stuff
     });
   });
 });
