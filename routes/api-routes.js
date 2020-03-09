@@ -106,6 +106,7 @@ app.get("/api/search", function(req, res) {
   
   axios.get(queryUrl).then((results) => {
     res.json(results.data.results);
+    // res.render("search", results.data.results);
   });
   });
 };
