@@ -1,34 +1,37 @@
 {{>navbar}}
 <div class="content">
-<div class="container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-lg-12 title">
-      <div>My Favorite Recipes</div>
-      <div id="memberName"></div>
-      <div id="memberId"></div>
-      <button type="btn" class="logout"><i class="fas fa-times-circle"></i></button>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12 title">
+        <div>My Favorite Recipes</div>
+        <div id="memberName"></div>
+        <div id="memberId"></div>
+        <button type="btn" class="logout"><i class="fas fa-times-circle"></i></button>
+      </div>
     </div>
-</div>
-</div>
-<div class="container d-flex">
-  <div class="row d-flex justify-content-center">
-     <div class="col-md-4">
-       {{#each recipes}}
-          &nbsp;
-       {{/each}}
-     </div>
-     <div class="col-md-4">
-          {{#each recipes}}
-              <a  href={{this.recipeLink}} target="_blank" rel="noopener noreferrer"><h3 class="mytitle"> {{this.title}} <button type="btn" class="del" id="{{this.id}}" data-id="{{this.id}}"><i class="fas fa-trash-alt fa-xs"></i></button></h3> 
-              <img class="img-fluid mybox" src={{this.imageLink}}></a><br>
-          {{/each}}
+  </div>
+  <div class="container d-flex">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-4">
+        {{#each recipes}}
+        &nbsp;
+        {{/each}}
       </div>
       <div class="col-md-4">
-       {{#each recipes}}
-         &nbsp;
-       {{/each}}
-     </div>
-  </div>
+        {{#each recipes}}
+        <a href={{this.recipeLink}} target="_blank" rel="noopener noreferrer">
+          <h3 class="mytitle"> {{this.title}} <button type="btn" class="del" id="{{this.id}}" data-id="{{this.id}}"><i
+                class="fas fa-trash-alt fa-xs"></i></button></h3>
+          <img class="img-fluid mybox" src={{this.imageLink}}>
+        </a><br>
+        {{/each}}
+      </div>
+      <div class="col-md-4">
+        {{#each recipes}}
+        &nbsp;
+        {{/each}}
+      </div>
+    </div>
   </div>
   <div class="row d-flex  justify-content-center">
     <div class="col-lg-12 testBtn">

@@ -1,6 +1,7 @@
 /* eslint-disable */
 var db = require("../models");
 var passport = require("../config/passport");
+const axios = require("axios");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -99,7 +100,13 @@ app.get("/api/favorites", function(req, res) {
 });
 
 app.get("/api/search", function(req, res) {
-  console.log(req);
-  res.render("search", { recipes: dbRecipes });
+  let searchTerm = req.body.searchTerm;
+  let apiKey = process.env.SPOON_APIKEY;
+  let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`
+  
+  axios.get(queryUrl).then((results) => {
+    res.json(results.data.results);
+    // res.render("search", results.data.results);
+  });
   });
 };
