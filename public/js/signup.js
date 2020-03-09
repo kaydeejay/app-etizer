@@ -29,7 +29,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(user) {
-        window.location.replace("/api/users/" + user.id + "/recipes");
+        window.location.replace(`/api/users/${user.id}/recipes`);
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
