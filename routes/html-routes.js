@@ -1,4 +1,3 @@
-var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -6,19 +5,19 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/api/users/" + req.user.id + "/recipes");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup", {});
   });
 
   app.get("/login", function(req, res) {
     if (req.user) {
       res.redirect("/api/users/" + req.user.id + "/recipes");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login", {});
   });
 
   app.get("/logout", function(req, res) {
     console.log(req);
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login", {});
   });
   app.get("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
