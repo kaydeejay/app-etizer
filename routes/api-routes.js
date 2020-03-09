@@ -94,18 +94,53 @@ module.exports = function (app) {
     });
   });
 
-app.get("/api/favorites", function(req, res) {
-  console.log(req);
-  res.render("favorites", { recipes: dbRecipes });
-});
-
-  app.get("/api/search", function (req, res) {
+  app.get("/api/favorites", function (req, res) {
     console.log(req);
-    res.render("search", { recipes: dbRecipes });
+    res.render("favorites", { recipes: dbRecipes });
   });
-  app.get("/api/spoontacular/", function (req, res) {
-    console.log(res);
-    res.render("search", { search: res });
+
+  // const getRecipes = () => {
+  //   let apiKey = process.env.SPOON_APIKEY;
+  //   let queryURL =
+  //     "https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=";
+  //   try {
+  //     return axios.get(queryURL + apiKey);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // app.get("/api/search", (_req, res) => {
+  //   getRecipes()
+  //     .then(function (apiRecipes) {
+  //       res.render("search", { recipes: apiRecipes.data });
+  //       // console.log(`SUMMARY: ${apiRecipes.data.summary}  WINE PAIRING: ${apiRecipes.data.winePairing.pairingText}`);   
+        
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     });
+  // });
+
+  app.get("/api/search/:id", ((req, res) => {
+    let recipeId = id;
+    id="716429"
+    let apiKey = process.env.SPOON_APIKEY;
+    let queryURL =
+      `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey}`;
+    axios.get(queryURL).then(axiosData => { 
+      console.log(axiosData.data)
+      res.render("search", {recipes: axiosData.data})
+    })
+  }));
+
+  app.get("/api/suggestion", function (req, res) {
+    db.Suggestion.findAll({
+      raw: true,
+    }).then(function (suggestion) {
+      // console.log(suggestion);
+      res.render("suggestions", {suggestion: suggestion});
+    });
   });
 app.get("/api/search", function(req, res) {
   let searchTerm = req.body.searchTerm;

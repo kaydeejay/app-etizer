@@ -32,7 +32,7 @@ module.exports = function(app) {
     console.log(req, res);
   });
   app.get("/search", isAuthenticated, function(req, res) {
-    console.log(req);
+    // console.log(req);
     res.render("search", {});
   });
   app.get("/favorites", isAuthenticated, function(req, res) {
