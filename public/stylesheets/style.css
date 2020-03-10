@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .img {
   display: block;
   max-width:350px;
@@ -10,6 +14,7 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
 .mytitle {
   font-size: 1.2em;
   padding-right: 1.5em;
@@ -19,11 +24,11 @@ form.login {
   margin-top: 1em;
   margin-bottom: 0;
   text-align: center;
-  background-color: gray;
   color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .mytitle a:link {
   text-decoration: none;
   margin-top: 0;
@@ -32,6 +37,7 @@ form.login {
   background-color: gray;
   color: white;
 }
+
 .mybox {
   background-color: red;
   /* position: relative; */
@@ -40,29 +46,242 @@ form.login {
   text-align: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 1px 1px 1px #999999;
 }
+
 .del {
   float: right;
   color: red;
   border-radius: 5px;
-  box-shadow: 2px 2px 4px #333333;
 }
+
 .logout {
   float: right;
   color: red;
   border-radius: 5px;
-  box-shadow: 2px 2px 4px #333333;
 }
+
 .title {
   font-size: 2em;
   font-weight: 600;
   text-align: center;
   color: blue;
 }
+
 .testBtn {
   font-size: .9em;
   font-weight: 400;
   text-align: center;
   color: green;
+}
+
+body {
+  padding-top: 30px;
+  background-color: #efefef;
+  padding-bottom: 120px;
+  height: 100%;
+  font-family: 'Mallanna', sans-serif;
+}
+
+h1 {
+  text-align:center;
+  font-size: 20px;
+}
+
+.button-rows {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card-con {
+   overflow: hidden;
+
+}
+.card-img-top {
+  height: 220px;
+  transition: all 0.3s ease-in-out; 
+}
+
+.card-img-top:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.align-items-center {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.fa-heart {
+  margin-left: 185px;
+  color: #CC6600;
+}
+
+.fa-heart:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* Search Bar */
+
+#recipeSearch {
+  text-align: center;
+}
+
+.form-control:focus, .btn:active {
+  box-shadow: none; /* Removes blue halo */
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.fa-search {
+  color: #CC6600;
+  pointer-events: none;
+}
+
+/* Buttons */
+
+.button-list {
+  text-align:center;
+  margin-left: 30px;
+  margin-right: 30px;
+  cursor: pointer; /* Pointer/hand icon */
+  margin-top: 10px;
+}
+
+.btn-outline-primary {
+  color:  #CC6600;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  border-color: #CC6600;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color:  #CC6600;
+  border-color: #CC6600;
+  cursor: pointer;
+}
+
+button:focus {
+  outline:0;
+}
+
+.responsive {
+  padding-top: 35px;
+  padding-bottom: 15px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  height: auto;
+}
+
+/* Favorite Recipes */
+
+.get-recipe {
+  color: white;
+  background-color: #CC6600;
+  border-color: #CC6600;
+}
+
+.get-recipe:hover {
+  color: #CC6600;
+  background-color: white;
+  border-color: #CC6600;
+  cursor: pointer;
+}
+
+/* Login Page */
+
+h2 {
+  padding-top:20px; 
+  text-align: center;
+  color: #CC6600;  
+}
+
+/* Login Form */
+.login-form {
+  width: 450px !important;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 30px;
+}
+
+.email-input 
+.password-input{
+  border-width: 4px;
+  border-color: #989898;
+}
+
+.login-btn {
+  color: white;
+  background-color:  #CC6600;
+  border-color: #CC6600;
+}
+
+.login-btn:hover {
+  color:  #CC6600;
+  background-color: white;
+  border-color: #CC6600;
+}
+
+.form-control:focus, .btn:active {
+  outline: #989898;
+  box-shadow: none; /* Removes blue halo */
+  border-color:#989898;
+}
+
+.container-fluid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.card-login-form {
+  display: block;
+  margin: auto;
+  width: 450px;  
+  margin-top: 40px;
+}
+
+/* Nav */
+
+.fas {
+  color:  #CC6600;
+}
+
+.nav-link {
+  color: #495057!important;
+}
+
+.fa-3x {
+  color:  #CC6600;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo {
+  left: 0;
+  padding-left: 30px;
+  height: 110px;
+  display: flex;
 }

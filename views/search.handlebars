@@ -1,16 +1,57 @@
 {{>navbar}}
-<h1>Search</h1>
-<div class="input-group mb-3">
-  <input type="text" class="form-control" id="recipeSearch" placeholder="Search..." aria-label="Search"
-    aria-describedby="button-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" id="searchButton" type="button" id="button-addon2">Search</button>
+
+<div class="container-fluid">
+  <div class="row no-gutters mt-3 align-items-center">
+    <div class="col col-md-12">
+      <input class="form-control border-secondary rounded-pill pr-5" type="search" placeholder="Search for a recipe"
+        id="example-search-input2"></div>
+    <div class="col-auto">
+      <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" id="button-addon2" type="button"><i class="fa fa-search"></i></button>
+    </div>
   </div>
-  <div>
-    <ul>
-      {{#each recipes }}
-      <li>{{this.title}}</li>
-      {{/each}}
-    </ul>
+</div>
+</div>
+
+<ul>
+  {{#each recipes }}
+  <li>{{recipe}}</li>
+  {{/each}}
+</ul>
+</div>
+
+
+
+<div class="container-fluid2">
+  <img src="./images/image1.jpg" alt="popular" class="responsive">
+  <div class="button-list">
+    <button type="button" class="btn btn-outline-primary">Chicken Alfredo</button>
+    <button type="button" class="btn btn-outline-primary">Meatloaf</button>
+    <button type="button" class="btn btn-outline-primary">Lasagna</button>
+    <button type="button" class="btn btn-outline-primary">Classic Chili</button>
+    <button type="button" class="btn btn-outline-primary">Maple Samon</button>
+  </div>
+  <img src="./images/image2.jpg" alt="asian" class="responsive">
+  <div class="button-list">
+    <button type="button" class="btn btn-outline-primary">Pad Thai</button>
+    <button type="button" class="btn btn-outline-primary">Dan Dan Noodles</button>
+    <button type="button" class="btn btn-outline-primary">Korean Fried Chicken</button>
+    <button type="button" class="btn btn-outline-primary">Sweet & Sour Chicken</button>
+    <button type="button" class="btn btn-outline-primary">Wonton Soup</button>
+  </div>
+  <img src="./images/image3.jpg" alt="asian" class="responsive">
+  <div class="button-list">
+    <button type="button" class="btn btn-outline-primary">Chicken Fajitas</button>
+    <button type="button" class="btn btn-outline-primary">Fish Tacos</button>
+    <button type="button" class="btn btn-outline-primary">Guacamole</button>
+    <button type="button" class="btn btn-outline-primary">Tortilla Soup</button>
+    <button type="button" class="btn btn-outline-primary">Mexican Bean Salad</button>
+  </div>
+  <img src="./images/image4.jpg" alt="asian" class="responsive">
+  <div class="button-list">
+    <button type="button" class="btn btn-outline-primary">Chicken Fajitas</button>
+    <button type="button" class="btn btn-outline-primary">Fish Tacos</button>
+    <button type="button" class="btn btn-outline-primary">Guacamole</button>
+    <button type="button" class="btn btn-outline-primary">Tortilla Soup</button>
+    <button type="button" class="btn btn-outline-primary">Mexican Bean Salad</button>
   </div>
 </div>
