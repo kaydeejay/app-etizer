@@ -1,15 +1,16 @@
 {{>navbar}}
 <h1>Search</h1>
 <div class="input-group mb-3">
-  <input type="text" class="form-control" id="recipeSearch" placeholder="Search..." aria-label="Search" aria-describedby="button-addon2">
+  <input type="text" class="form-control" id="recipeSearch" placeholder="Search..." aria-label="Search"
+    aria-describedby="button-addon2">
   <div class="input-group-append">
     <button class="btn btn-outline-secondary" id="searchButton" type="button" id="button-addon2">Search</button>
   </div>
   <div>
     <ul>
-        {{#each recipes }}
-            <li>{{recipe}}</li>
-        {{/each}}
+      {{#each recipes }}
+      <li>{{this.title}}</li>
+      {{/each}}
     </ul>
   </div>
 </div>
