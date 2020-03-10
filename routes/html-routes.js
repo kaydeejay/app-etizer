@@ -30,7 +30,7 @@ module.exports = function(app) {
   app.delete("/recipes", isAuthenticated, function(req, res) {
     console.log(req, res);
   });
-  app.get("/search", isAuthenticated, function(req, res) {
+  app.get("/search", isAuthenticated, function(req, res) {  
     // console.log(req);
     res.render("search", {});
   });

@@ -134,22 +134,16 @@ module.exports = function (app) {
     })
   }));
 
-  app.get("/api/suggestion", function (req, res) {
-    db.Suggestion.findAll({
-      raw: true,
-    }).then(function (suggestion) {
-      // console.log(suggestion);
-      res.render("suggestions", {suggestion: suggestion});
-    });
-  });
 app.get("/api/search", function(req, res) {
   let searchTerm = req.body.searchTerm;
   let apiKey = process.env.SPOON_APIKEY;
   let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`
   
   axios.get(queryUrl).then((results) => {
-    res.json(results.data.results);
-    // res.render("search", results.data.results);
+    // res.json(results.data.results);
+    console.log("HI THERE: ", results);
+    // res.redirect("/search");
+    res.render("search", results.data.results);
   });
   });
 };
