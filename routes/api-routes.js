@@ -105,8 +105,10 @@ module.exports = function(app) {
     let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
     
     axios.get(queryUrl).then((results) => {
-      res.json(results.data.results);
-      // res.render("search", { recipes: results.data.results });
+      console.log(results.data.results);
+      // res.render("search-results", { recipes: results.data.results });
+      // res.render("favorites", {})
+      res.redirect("/api/searchresults")
     });
   });
   
