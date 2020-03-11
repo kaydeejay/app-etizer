@@ -5,8 +5,6 @@ $(document).ready(function() {
       .trim();
     const search = { searchTerm: query };
 
-    console.log(query + " " + search);
-
     $.ajax({
       url: "/api/search",
       method: "POST",
