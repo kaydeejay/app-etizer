@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 $(document).ready(function() {
   $("#searchButton").on("click", function() {
     const query = $("#recipeSearch")
@@ -16,5 +17,9 @@ $(document).ready(function() {
     // }).then(result => {
     //   console.log(result);
     // });
+  });
+
+  $("#meatLoaf").on("click", function() {
+    location.href = "/results.html";
   });
 });
