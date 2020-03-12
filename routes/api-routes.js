@@ -108,4 +108,37 @@ module.exports = function (app) {
     })
       .catch(error => console.log(error))
   });
+
+  // app.post("/api/search", function(req, res) {
+  //   let searchTerm = req.body.searchTerm;
+  //   let apiKey = process.env.SPOON_APIKEY;
+  //   let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
+    
+  //   axios.get(queryUrl).then((results) => {
+  //     // console.log(results.data.results);
+  //     res.render("search-results", { recipes: results.data.results });
+  //   });
+  // });
+
+  app.get("/api/search/:term", function(req, res) {
+    let searchTerm = req.params.term;
+    let apiKey = process.env.SPOON_APIKEY;
+    let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
+    
+    axios.get(queryUrl).then((results) => {
+      // console.log(results.data.results);
+      res.render("search-results", { recipes: results.data.results });
+    });
+  });
+  
+  app.get("/api/searchquery/:id", (req,res) => {
+    let id = req.params.id;
+    let apiKey = process.env.SPOON_APIKEY;
+    let queryUrl = `https://api.spoonacular.com/recipes/search?query=${search}&apiKey=${apiKey}`;
+    axios.get(queryUrl).then(response => {
+      res.json(response.data);
+      console.log("api-route:", response.data);
+    })
+      .catch(error => console.log(error))
+  });
 };
