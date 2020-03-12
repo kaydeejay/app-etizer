@@ -65,7 +65,7 @@ module.exports = function (app) {
       }
     }).then(function (dbRecipes) {
       console.log(dbRecipes);
-      res.render("index", { recipes: dbRecipes });
+      res.render("recipes", { recipes: dbRecipes });
     });
   });
 
@@ -76,21 +76,20 @@ module.exports = function (app) {
       }
     }).then(function (dbRecipes) {
       console.log(dbRecipes);
-      res.render("index", { recipes: dbRecipes });
+      res.render("recipes", { recipes: dbRecipes });
     });
   });
 
   app.post("/api/recipes", function (req, res) {
     console.log(req);
     db.Recipe.create({
-      recipeLink: req.body.recipeLink,
       spoonId: req.body.spoonId,
       title: req.body.title,
       imageLink: req.body.imageLink,
       UserId: req.body.UserId
     }).then(function (dbRecipes) {
-      console.log(dbRecipes);
-      res.render("index", { recipes: dbRecipes });
+      console.log("Hello ", dbRecipes);
+      res.render("recipes", { recipes: dbRecipes });
     });
   });
 

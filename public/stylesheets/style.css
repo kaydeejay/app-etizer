@@ -61,10 +61,10 @@ form.login {
 }
 
 .title {
-  font-size: 2em;
-  font-weight: 600;
+  font-size: .8em;
+  font-weight: 400;
   text-align: center;
-  color: blue;
+  color: gray;
 }
 
 .testBtn {
@@ -77,6 +77,7 @@ form.login {
 body {
   padding-top: 30px;
   background-color: #efefef;
+  color: #495057;
   padding-bottom: 120px;
   height: 100%;
   font-family: 'Mallanna', sans-serif;

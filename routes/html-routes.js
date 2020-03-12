@@ -21,14 +21,15 @@ module.exports = function(app) {
   });
   app.get("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
-    res.render("index", {});
+    res.redirect("/api/users/" + req.user.id + "/recipes");
   });
   app.post("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
-    res.render("index", {});
+    res.redirect("/api/users/" + req.user.id + "/recipes");
   });
   app.delete("/recipes", isAuthenticated, function(req, res) {
     console.log(req, res);
+    res.render("recipes", {});
   });
   app.get("/search", isAuthenticated, function(req, res) {
     // console.log(res);
