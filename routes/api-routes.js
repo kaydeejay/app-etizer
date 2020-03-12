@@ -99,18 +99,29 @@ module.exports = function(app) {
     res.render("favorites", { recipes: dbRecipes });
   });
 
-  app.post("/api/search", function(req, res) {
-    let searchTerm = req.body.searchTerm;
+  // app.post("/api/search", function(req, res) {
+  //   let searchTerm = req.body.searchTerm;
+  //   let apiKey = process.env.SPOON_APIKEY;
+  //   let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
+    
+  //   axios.get(queryUrl).then((results) => {
+  //     // console.log(results.data.results);
+  //     res.render("search-results", { recipes: results.data.results });
+  //   });
+  // });
+
+  app.get("/api/search/:term", function(req, res) {
+    let searchTerm = req.params.term;
     let apiKey = process.env.SPOON_APIKEY;
     let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
     
     axios.get(queryUrl).then((results) => {
       // console.log(results.data.results);
-      res.render("partials/search-results", { recipes: results.data.results });
+      res.render("search-results", { recipes: results.data.results });
     });
   });
   
-  app.get("/api/search/:id", (req,res) => {
+  app.get("/api/searchquery/:id", (req,res) => {
     let id = req.params.id;
     let apiKey = process.env.SPOON_APIKEY;
     let queryUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey}`;

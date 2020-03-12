@@ -75,12 +75,12 @@ $(document).ready(function() {
     const query = $("#recipeSearch")
       .val()
       .trim();
-    const search = { searchTerm: query };
-
-    $.ajax({
-      url: "/api/search",
-      method: "POST",
-      data: search
-    }).then(result => console.log(result));
+    // const search = { searchTerm: query };
+    window.location.replace("/api/search/" + query);
+    // $.ajax({
+    //   url: `/api/chicken/${query}`,
+    //   method: "POST",
+    //   data: search
+    // }).then(result => console.log(result));
   });
 });
