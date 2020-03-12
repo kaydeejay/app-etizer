@@ -21,21 +21,30 @@ module.exports = function(app) {
   });
   app.get("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
-    res.render("index", {});
+    res.redirect("/api/users/" + req.user.id + "/recipes");
   });
   app.post("/recipes", isAuthenticated, function(req, res) {
     console.log(req);
-    res.render("index", {});
+    res.redirect("/api/users/" + req.user.id + "/recipes");
   });
   app.delete("/recipes", isAuthenticated, function(req, res) {
     console.log(req, res);
+    res.render("recipes", {});
   });
   app.get("/search", isAuthenticated, function(req, res) {
-    console.log(req);
+    // console.log(res);
+    res.render("search", {});
+  });
+  app.post("/search", isAuthenticated, function(req, res) {
+    // console.log(res);
     res.render("search", {});
   });
   app.get("/favorites", isAuthenticated, function(req, res) {
     console.log(req);
     res.render("favorites", {});
+  });
+  app.get("/results", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("results", {});
   });
 };
