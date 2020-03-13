@@ -2,14 +2,6 @@
   box-sizing: border-box;
 }
 
-/* .img {
-  display: block;
-  max-width:350px;
-  max-height:525px;
-  width: auto;
-  height: auto;
-} */
-
 form.signup,
 form.login {
   margin-top: 50px;

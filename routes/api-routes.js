@@ -81,15 +81,14 @@ module.exports = function (app) {
   });
 
   app.post("/api/recipes", function (req, res) {
-    console.log(req);
     db.Recipe.create({
       spoonId: req.body.spoonId,
       title: req.body.title,
       imageLink: req.body.imageLink,
       UserId: req.body.UserId
     }).then(function (dbRecipes) {
-      console.log("Hello ", dbRecipes);
-      res.render("recipes", { recipes: dbRecipes });
+      res.json(dbRecipes);
+      // res.render("recipes", { recipes: dbRecipes });
     });
   });
 
