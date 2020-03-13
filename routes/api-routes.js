@@ -33,7 +33,6 @@ module.exports = function (app) {
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
-    // eslint-disable-next-line no-use-before-define
     req.session.destroy((err) => {
       if (err) return next(err)
       req.logout()
@@ -131,14 +130,14 @@ module.exports = function (app) {
     });
   });
   
-  app.get("/api/searchquery/:id", (req,res) => {
-    let id = req.params.id;
+  app.get("/api/suggestedSearch/:search", function(req, res) {
+    let searchTerm = req.params.search;
     let apiKey = process.env.SPOON_APIKEY;
-    let queryUrl = `https://api.spoonacular.com/recipes/search?query=${search}&apiKey=${apiKey}`;
-    axios.get(queryUrl).then(response => {
-      res.json(response.data);
-      console.log("api-route:", response.data);
-    })
-      .catch(error => console.log(error))
+    let queryUrl = `https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=${apiKey}`;
+
+    axios.get(queryUrl).then((results) => {
+      res.render("search-results", { recipes: results.data.results });
+    });
+
   });
 };
