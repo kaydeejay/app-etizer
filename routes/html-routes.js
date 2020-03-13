@@ -47,4 +47,8 @@ module.exports = function(app) {
     console.log(req);
     res.render("results", {});
   });
+  app.get("/profile", isAuthenticated, function(req, res) {
+    console.log(req);
+    res.render("profile", {});
+  });
 };

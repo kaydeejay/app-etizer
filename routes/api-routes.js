@@ -94,7 +94,7 @@ module.exports = function (app) {
 
   app.get("/api/favorites", function (req, res) {
     console.log(req);
-    res.render("favorites", { recipes: dbRecipes });
+    res.render("recipes", { recipes: dbRecipes });
   });
 
   app.post("/api/search/:search", function (req, res) {
