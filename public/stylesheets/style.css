@@ -109,8 +109,10 @@ h1 {
 }
 
 .fa-heart {
-  margin-left: 185px;
+  /* margin-left: 185px; */
   color: #CC6600;
+  margin: 0px;
+  padding: 0px;
 }
 
 .fa-heart:hover {
@@ -207,7 +209,9 @@ h2 {
   margin: 0 auto;
   margin-top: 50px;
 }
-
+.membid {
+  display: none;
+}
 .login {
   margin-left: 12px;
   margin-right: 12px;
