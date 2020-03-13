@@ -1,13 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
-    // The url cannot be null, and must be a proper url before creation
-    recipeLink: {
-      type: DataTypes.STRING,
-      allowNull: false
-      // validate: {
-      //   validate: { isUrl: { msg: "Invalid URL" } }
-      // }
-    },
     spoonId: {
       type: DataTypes.INTEGER,
       allowNull: false

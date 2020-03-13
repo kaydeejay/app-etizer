@@ -29,7 +29,9 @@ $(document).ready(function() {
       password: password
     })
       .then(function(user) {
-        window.location.replace("/api/users/" + user.id + "/recipes");
+        console.log(user);
+        window.location.replace("/search");
+        // window.location.replace(`/api/users/${user.id}/recipes`);
 
         // If there's an error, log the error
       })

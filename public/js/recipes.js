@@ -24,7 +24,6 @@ $(document).ready(function() {
     $(".post").on("click", function(event) {
       event.preventDefault();
       var newRecipe = {
-        recipeLink: "https://www.yelp.com/",
         spoonId: 123456,
         title: "Great Food",
         imageLink:
