@@ -1,9 +1,11 @@
 $(document).ready(function() {
   $(function() {
+    let id;
     $.get("/api/user_data").then(function(data) {
       $("#memberName").text(data.email);
       $("#memberId").text(data.id);
-      userid = data.id;
+      userId = data.id;
+      id = data.id;
     });
     $(".del").on("click", function(event) {
       event.preventDefault();
@@ -23,11 +25,16 @@ $(document).ready(function() {
 
     $(".fav").on("click", function(event) {
       event.preventDefault();
+      var recipeId = $(this).data("id");
+      var title = $(this).data("title");
+      var image = $(this).data("image");
+      var userId = id;
+
       var newRecipe = {
-        spoonId: $(this).id,
-        title: $(this).title,
-        imageLink: $(this).image,
-        UserId: $(this).data("id")
+        spoonId: recipeId,
+        title: title,
+        imageLink: `https://spoonacular.com/recipeImages/${image}`,
+        UserId: userId
       };
       $.ajax("/api/recipes", {
         type: "POST",
