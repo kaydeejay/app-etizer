@@ -80,21 +80,20 @@ module.exports = function (app) {
   });
 
   app.post("/api/recipes", function (req, res) {
-    console.log(req);
     db.Recipe.create({
       spoonId: req.body.spoonId,
       title: req.body.title,
       imageLink: req.body.imageLink,
       UserId: req.body.UserId
     }).then(function (dbRecipes) {
-      console.log("Hello ", dbRecipes);
-      res.render("recipes", { recipes: dbRecipes });
+      res.json(dbRecipes);
+      // res.render("recipes", { recipes: dbRecipes });
     });
   });
 
   app.get("/api/favorites", function (req, res) {
     console.log(req);
-    res.render("favorites", { recipes: dbRecipes });
+    res.render("recipes", { recipes: dbRecipes });
   });
 
   app.post("/api/search/:search", function (req, res) {

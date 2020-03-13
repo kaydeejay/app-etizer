@@ -8,6 +8,12 @@
  grid-gap: 20px;
  }
 
+ @media only screen and (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 80%; 
+  }
+}
+
 .mytitle {
   font-size: 1.2em;
   padding-right: 1.5em;
@@ -211,6 +217,12 @@ h2 {
 .password-input{
   border-width: 4px;
   border-color: #989898;
+}
+.fav {
+  width: 100px;
+  border: none;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .login-btn {

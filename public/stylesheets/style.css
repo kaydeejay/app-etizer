@@ -2,14 +2,6 @@
   box-sizing: border-box;
 }
 
-/* .img {
-  display: block;
-  max-width:350px;
-  max-height:525px;
-  width: auto;
-  height: auto;
-} */
-
 form.signup,
 form.login {
   margin-top: 50px;
@@ -111,8 +103,7 @@ h1 {
 .fa-heart {
   /* margin-left: 185px; */
   color: #CC6600;
-  margin: 0px;
-  padding: 0px;
+  text-align: center;
 }
 
 .fa-heart:hover {
@@ -203,6 +194,12 @@ h2 {
   color: #CC6600;  
 }
 
+.userInfo {
+  text-align: center;
+  color: #CC6600;
+  font-size: 2;
+  font-weight: 700
+}
 /* Login Form */
 .login-form {
   width: 450px !important;
