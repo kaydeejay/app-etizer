@@ -21,6 +21,20 @@ $(document).ready(function() {
       });
     });
 
+    $(".fav").on("click", function(event) {
+      event.preventDefault();
+      var newRecipe = {
+        spoonId: $(this).id,
+        title: $(this).title,
+        imageLink: $(this).image,
+        UserId: $(this).data("id")
+      };
+      $.ajax("/api/recipes", {
+        type: "POST",
+        data: newRecipe
+      }).then(location.reload());
+    });
+
     $(".post").on("click", function(event) {
       event.preventDefault();
       var newRecipe = {

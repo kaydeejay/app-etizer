@@ -212,7 +212,12 @@ h2 {
   border-width: 4px;
   border-color: #989898;
 }
-
+.fav {
+  width: 100px;
+  border: none;
+  margin: 0;
+  padding-top: 30px;
+}
 .login-btn {
   color: white;
   background-color:  #CC6600;

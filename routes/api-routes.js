@@ -89,7 +89,7 @@ module.exports = function (app) {
       UserId: req.body.UserId
     }).then(function (dbRecipes) {
       console.log("Hello ", dbRecipes);
-      res.render("recipes", { recipes: dbRecipes });
+      // res.render("recipes", { recipes: dbRecipes });
     });
   });
 
