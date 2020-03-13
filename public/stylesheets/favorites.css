@@ -1,19 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-
-/* .img {
-  display: block;
-  max-width:350px;
-  max-height:525px;
-  width: auto;
-  height: auto;
-} */
-
-form.signup,
-form.login {
-  margin-top: 50px;
-}
+.grid-container {
+  display: grid;
+  width: 100%;
+ justify-content: space-evenly;
+ grid-template-columns: 25% 25% 25%; 
+ text-align: center;
+ padding: 10px;
+ grid-gap: 20px;
+ }
 
 .mytitle {
   font-size: 1.2em;
