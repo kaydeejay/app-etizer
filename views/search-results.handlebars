@@ -1,6 +1,28 @@
 {{>navbar}}
-<ul>
-  {{#each recipes }}
-  <li>{{this.title}}</li>
-  {{/each}}
-</ul>
+<div class="content">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12 title">
+        <div>Search Results</div>
+        <div id="memberName"></div>
+        <div id="memberId" class="membid"></div>
+        <button type="btn" class="logout"><i class="fas fa-times-circle"></i></button>
+      </div>
+    </div>
+  </div>   
+<div class="grid-container">
+{{#each recipes}}
+      
+        <div class="card">
+          <div class="card-con">
+            <img src="https://spoonacular.com/recipeImages/{{this.image}}" alt="" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <a href=""><i class="fa fa-heart"></i></a>
+            <button type="btn" class="del" id="{{this.id}}" data-id="{{this.id}}"><i class="fas fa-trash-alt fa-xs"></i></button></h4></a><br>
+            <a href="" class="btn btn-primary get-recipe">Get recipe</a>
+          </div>
+        </div>
+            
+{{/each}}

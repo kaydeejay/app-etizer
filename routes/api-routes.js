@@ -103,6 +103,7 @@ module.exports = function (app) {
     let queryUrl = `https://api.spoonacular.com/recipes/search?query=${search}&apiKey=${apiKey}`;
     axios.get(queryUrl).then(response => {
       res.json(response.data);
+      console.log(res.json(response.data));
       console.log("api-route:", response.data);
     })
       .catch(error => console.log(error))
