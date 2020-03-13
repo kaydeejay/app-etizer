@@ -6,12 +6,8 @@ $(document).ready(function() {
     window.location.replace("/api/search/" + query);
   });
 
-  $(document).ready(function() {
-    $(function() {
-      $(".suggestedSearch").on("click", function() {
-        let searchTerm = $(this).text();
-        window.location.replace(`/api/suggestedSearch/${searchTerm}`);
-      });
-    });
+  $(".suggestedSearch").on("click", function() {
+    let searchTerm = $(this).text();
+    window.location.replace(`/api/suggestedSearch/${searchTerm}`);
   });
 });
