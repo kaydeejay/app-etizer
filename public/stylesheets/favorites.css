@@ -224,6 +224,11 @@ h2 {
   padding-top: 30px;
 }
 
+.fav:hover:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
 .login-btn {
   color: white;
   background-color:  #CC6600;

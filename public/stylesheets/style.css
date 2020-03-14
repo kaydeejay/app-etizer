@@ -107,8 +107,8 @@ h1 {
 }
 
 .fa-heart:hover {
-  color: white;
   cursor: pointer;
+  opacity: .5;
 }
 
 /* Search Bar */
